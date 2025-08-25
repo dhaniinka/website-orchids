@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f0f0;
+}
+
+.container {
+  position: relative;
+  width: 900px;
+  height: 550px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  margin: 50px auto;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  padding: 60px 50px;
+  transition: all 0.6s ease-in-out;
+  background: #fff;
+  z-index: 2;
+}
+
+.sign-in-container { left: 0; }
+.sign-up-container { left: 100%; opacity: 0; z-index: 1; }
+
+.container.active .sign-in-container {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.active .sign-up-container {
+  transform: translateX(-100%);
+  opacity: 1;
+  z-index: 2;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-icons div {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #556b2f;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Overlay container dengan gradient & overlay semi-transparan */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/Taman.png') center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  color: white;
+  transition: transform 0.6s ease-in-out;
+  z-index: 3;
+}
+
+/* Tambahkan text shadow supaya lebih jelas */
+.overlay-container h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.overlay-container p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+.overlay-container button {
+  padding: 10px 30px;
+  font-size: 16px;
+  background: #556b2f;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.container.active .overlay-container {
+  transform: translateX(-100%);
+}

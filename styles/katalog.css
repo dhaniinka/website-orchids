@@ -1,0 +1,127 @@
+/* Reset box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Body */
+body, html {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+}
+
+/* Container utama katalog */
+.katalog-page {
+  display: flex;
+  flex-direction: column; /* Judul di atas, produk di bawah */
+  align-items: center;    /* Tengah horizontal */
+  gap: 40px;              /* Jarak antar elemen */
+  padding: 20px 0;
+}
+
+/* Judul halaman */
+.katalog-page h1 {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 32px;
+  font-family: serif;
+  letter-spacing: 2px;
+}
+
+/* Grid produk */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px 50px 60px;
+  justify-items: center;
+}
+
+/* Kartu produk */
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Label diskon */
+.discount {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #f4e6a1;
+  color: #000;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Gambar produk */
+.card img {
+  max-width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Tombol aksi */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e4d5e4;
+  padding: 8px 12px;
+}
+
+.actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Konten kartu */
+.card-content {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.card-content h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.card-content p {
+  color: #a94442;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
